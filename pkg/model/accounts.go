@@ -14,10 +14,10 @@ var (
 
 type Accounts struct {
 	gorm.Model
-	Password    string `gorm:"type:varchar(500)" json:"password"`
+	Password    string `gorm:"type:varchar(500); not null" json:"password"`
 	AccessToken string `gorm:"type:varchar(500)" json:"access_token"`
-	Name        string `gorm:"type:varchar(50)" json:"name"`
-	Email       string `gorm:"type:varchar(50)" json:"email"`
+	Name        string `gorm:"type:varchar(50); not null" json:"name"`
+	Email       string `gorm:"type:varchar(50); not null" json:"email"`
 }
 
 func NewAccount() *Accounts {
